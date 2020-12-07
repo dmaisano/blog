@@ -24,9 +24,11 @@
     "gatsby-plugin-sitemap": "^2.5.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "theme-ui": "^0.3.4"
   },
   "devDependencies": {
+    "@types/theme-ui": "^0.3.7",
     "cross-env": "^7.0.2"
   }
 }

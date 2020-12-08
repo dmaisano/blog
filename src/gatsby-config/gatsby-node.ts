@@ -4,7 +4,12 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+import { CreateWebpackConfigArgs } from "gatsby"
+
+export const onCreateWebpackConfig = ({
+  getConfig,
+  stage,
+}: CreateWebpackConfigArgs) => {
   const config = getConfig()
   if (stage.startsWith("develop") && config.resolve) {
     config.resolve.alias = {

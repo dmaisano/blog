@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal Blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Domenico Maisano <dmaisanooo@gmail.com>",
   "dependencies": {
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.5.0",
@@ -19,7 +19,9 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "@hot-loader/react-dom": "^16.8.6",
+    "@types/react-helmet": "^6.1.0",
+    "prettier": "^2.1.2"
   },
   "keywords": [
     "gatsby"
@@ -32,7 +34,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "prettier": "prettier --config .prettierrc 'gatsby-*.js' 'src/**/*.{json,md,mdx,js,jsx,ts,tsx}' --write"
   },
   "repository": {
     "type": "git",

@@ -1,13 +1,18 @@
 import dotenv from "dotenv"
+import { existsSync, openSync, writeFileSync } from "fs"
 import { join } from "path"
-import { existsSync, openSync } from "fs"
 
+const PROJECT_ROOT = join(__dirname, "../../")
 const NODE_ENV = process.env.NODE_ENV as "development" | "production"
 const ENV_FILE_PATH = join(__dirname, `../../.env.${NODE_ENV}`)
 
 try {
   if (!existsSync(ENV_FILE_PATH)) {
     openSync(ENV_FILE_PATH, "w")
+
+    if (NODE_ENV === "development") {
+      writeFileSync(ENV_FILE_PATH, `GATSBY_GRAPHQL_IDE=playground`)
+    }
   }
 } catch (err) {
   console.log(err)
@@ -25,7 +30,19 @@ export default {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [`.md`, `.mdx`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${PROJECT_ROOT}/content/posts`,
+        name: `posts`,
+      },
+    },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {

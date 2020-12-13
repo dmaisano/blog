@@ -23,13 +23,14 @@ dotenv.config({ path: ENV_FILE_PATH })
 export default {
   siteMetadata: {
     title: `dmaisano`,
-    siteTitle: `dmaisano`,
     description: `Personal Blog`,
     author: `@dmaisano`,
+    externalLinks: [`Github`],
+    navigation: [`Posts`, `About`],
+    formatString: "MMMM Do, YYYY",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-remark`,
     {
       resolve: "gatsby-plugin-mdx",
       options: {
@@ -39,10 +40,11 @@ export default {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${PROJECT_ROOT}/content/posts`,
-        name: `posts`,
+        path: `${PROJECT_ROOT}/content`,
+        name: `content`,
       },
     },
+    // `gatsby-transformer-remark`,
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {

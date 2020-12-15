@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-export { onCreateWebpackConfig } from "./gatsby-node/onCreateWebpackConfig"
-export { createSchemaCustomization } from "./gatsby-node/createSchemaCustomization"
 export { createPages } from "./gatsby-node/createPages"
+export { createSchemaCustomization } from "./gatsby-node/createSchemaCustomization"
+export { onCreateNode } from "./gatsby-node/onCreateNode"
+export { onCreateWebpackConfig } from "./gatsby-node/onCreateWebpackConfig"

@@ -56,9 +56,9 @@ export const createSchemaCustomization = ({
     /* GraphQL */ `
       interface Post @nodeInterface {
         id: ID!
-        slug: String! @slugify
+        slug: String! # could optionally @slugify, currently using file name as slug
         title: String!
-        date: Date @dateformat
+        date: Date! @dateformat
         excerpt(pruneLength: Int = 160): String!
         body: String!
         html: String

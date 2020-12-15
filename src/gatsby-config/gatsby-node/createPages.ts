@@ -38,6 +38,7 @@ export const createPages = async ({
     let component
     let context: TemplateMdx
 
+    // use this to get the slug
     const mdxBasePath = new RegExp(`(${CONTENT_PATHS.join("|")})/`).exec(
       node.slug
     )?.[1]

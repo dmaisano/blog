@@ -42,7 +42,7 @@ const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
 export default UsingTypescript
 
 export const query = graphql`
-  {
+  query {
     site {
       buildTime(formatString: "YYYY-MM-DD hh:mm a z")
     }

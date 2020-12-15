@@ -27,10 +27,13 @@ export default {
     author: `@dmaisano`,
     externalLinks: [`Github`],
     navigation: [`Posts`, `About`],
-    formatString: "MMMM Do, YYYY",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-typegen`,
+      options: {},
+    },
     {
       resolve: "gatsby-plugin-mdx",
       options: {
@@ -52,8 +55,8 @@ export default {
     //     path: `${__dirname}/src/images`,
     //   },
     // },
-    // `gatsby-transformer-sharp`,
-    // `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

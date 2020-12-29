@@ -1,24 +1,13 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
+import { useSiteMetadata } from "../hooks"
 
-function SEO({ description = ``, lang = `en`, meta = [], title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+function SEO({ description = ``, lang = `en`, meta = [], title = `Home` }) {
+  const site = useSiteMetadata()
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || site.description
+  const defaultTitle = site.title
 
   let titleTemplate: string = ""
 
@@ -60,7 +49,7 @@ function SEO({ description = ``, lang = `en`, meta = [], title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: site.author || ``,
         },
         {
           name: `twitter:title`,

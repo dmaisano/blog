@@ -10,13 +10,13 @@ const IndexPage: React.FC<PageProps<GatsbyTypes.PostsQuery>> = (props) => {
   })
 
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
 
       <h1>Index Page</h1>
 
       <p>{JSON.stringify(props)}</p>
-    </Layout>
+    </>
   )
 }
 

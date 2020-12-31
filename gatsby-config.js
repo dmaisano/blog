@@ -3,7 +3,12 @@ module.exports = {
     title: `dmaisano`,
     description: `Personal Blog`,
     author: `@dmaisano`,
-    externalLinks: [`Github`],
+    externalLinks: [
+      {
+        name: `Github`,
+        url: `https://github.com/dmaisano`,
+      },
+    ],
     navigation: [`Posts`, `About`],
   },
   plugins: [
@@ -28,5 +33,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-theme-ui`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`IBM Plex Sans`, `Roboto`],
+        display: "swap",
+      },
+    },
   ],
 }

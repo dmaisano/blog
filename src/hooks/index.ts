@@ -8,7 +8,10 @@ export const useSiteMetadata = () => {
           title
           description
           author
-          externalLinks
+          externalLinks {
+            name
+            url
+          }
           navigation
         }
       }

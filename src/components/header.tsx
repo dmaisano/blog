@@ -1,14 +1,21 @@
+/** @jsx jsx */
 import { Flex } from "@theme-ui/components"
 import { Link } from "gatsby"
 import React from "react"
-import { useColorMode } from "theme-ui"
+import { jsx, useColorMode, Link as TLink } from "theme-ui"
 import { useSiteMetadata } from "../hooks"
+import { replaceSlashes } from "../utils"
 import ColorModeToggle from "./colormode-toggle"
 
 export const Header: React.FC = ({}) => {
-  const { title, navigation: nav } = useSiteMetadata()
+  const { title, navigation: nav, externalLinks } = useSiteMetadata()
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
+  const basePath = `/`
+
+  console.log({
+    externalLinks,
+  })
 
   const toggleColorMode = (e: React.ChangeEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -19,7 +26,7 @@ export const Header: React.FC = ({}) => {
     <header sx={{ mb: [5, 6] }}>
       <Flex sx={{ alignItems: `center`, justifyContent: `space-between` }}>
         <Link
-          to={`/`}
+          to={basePath}
           aria-label={`${title} - Back to home`}
           sx={{ color: `heading`, textDecoration: `none` }}
         >
@@ -37,13 +44,46 @@ export const Header: React.FC = ({}) => {
           alignItems: `center`,
           justifyContent: `space-between`,
           mt: 3,
-          color: `secondary`,
-          a: { color: `secondary`, ":hover": { color: `heading` } },
+          color: `accent`,
+          a: { color: `accent`, ":hover": { color: `heading` } },
           flexFlow: `wrap`,
         }}
       >
-        {/* <Navigation nav={nav} />
-        <HeaderExternalLinks /> */}
+        {nav && nav.length > 0 && (
+          <nav
+            sx={{
+              "a:not(:last-of-type)": { mr: 3 },
+              fontSize: [1, `18px`],
+              "a.active": { color: `heading` },
+            }}
+          >
+            {nav.map((navLink) => {
+              const lowcaseLink = navLink?.toLowerCase()
+
+              return (
+                <Link
+                  key={lowcaseLink}
+                  activeClassName="active"
+                  to={replaceSlashes(`/${basePath}/${lowcaseLink}`)}
+                >
+                  {navLink}
+                </Link>
+              )
+            })}
+          </nav>
+        )}
+
+        {externalLinks && externalLinks.length > 0 && (
+          <div
+            sx={{ "a:not(:first-of-type)": { ml: 3 }, fontSize: [1, `18px`] }}
+          >
+            {externalLinks.map((link) => (
+              <TLink key={link?.name} href={link?.url}>
+                {link?.name}
+              </TLink>
+            ))}
+          </div>
+        )}
       </div>
     </header>
   )

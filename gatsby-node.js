@@ -4,6 +4,9 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
+/**
+ * @param {import('gatsby').CreatePagesArgs} args
+ */
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 

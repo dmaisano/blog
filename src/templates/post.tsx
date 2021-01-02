@@ -7,8 +7,6 @@ import { Post } from "../types"
 const PostTemplate: React.FC<PageProps<{}, Post>> = (props) => {
   const { body, frontmatter, timeToRead } = props.pageContext
 
-  console.log(props)
-
   return (
     <>
       <SEO title={frontmatter.title} />

@@ -13,10 +13,6 @@ export const Header: React.FC = ({}) => {
   const isDark = colorMode === `dark`
   const basePath = `/`
 
-  console.log({
-    externalLinks,
-  })
-
   const toggleColorMode = (e: React.ChangeEvent<HTMLButtonElement>) => {
     e.preventDefault()
     setColorMode(isDark ? `light` : `dark`)
@@ -78,7 +74,7 @@ export const Header: React.FC = ({}) => {
             sx={{ "a:not(:first-of-type)": { ml: 3 }, fontSize: [1, `18px`] }}
           >
             {externalLinks.map((link) => (
-              <TLink key={link?.name} href={link?.url}>
+              <TLink key={link?.name} href={link?.url} target="_blank">
                 {link?.name}
               </TLink>
             ))}

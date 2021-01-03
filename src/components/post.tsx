@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import React from "react"
-import { jsx } from "theme-ui"
 import { Box } from "@theme-ui/components"
 import { Link } from "gatsby"
+import React from "react"
+import { jsx } from "theme-ui"
 import { Post } from "../types"
 
 interface PostProps {

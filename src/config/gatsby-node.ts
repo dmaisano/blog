@@ -4,10 +4,13 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-/**
- * @param {import('gatsby').CreatePagesArgs} args
- */
-exports.createPages = async ({ actions, graphql, reporter }) => {
+import { CreatePagesArgs, CreateWebpackConfigArgs } from "gatsby"
+
+export const createPages = async ({
+  actions,
+  graphql,
+  reporter,
+}: CreatePagesArgs) => {
   const { createPage } = actions
 
   const result = await graphql(/* GraphQL */ `
@@ -38,8 +41,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  result.data?.posts.nodes.forEach((node) => {
-    const component = require.resolve(`${__dirname}/src/templates/post.tsx`)
+  const data = result.data as any
+
+  data?.posts.nodes.forEach((node) => {
+    const component = require.resolve(`../templates/post.tsx`)
     const context = node
 
     createPage({
@@ -51,7 +56,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 }
 
 // replacing react-dom with @hot-loader/react-dom during development
-exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+export const onCreateWebpackConfig = ({
+  getConfig,
+  stage,
+}: CreateWebpackConfigArgs) => {
   const config = getConfig()
   if (stage.startsWith("develop") && config.resolve) {
     config.resolve.alias = {

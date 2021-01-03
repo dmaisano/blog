@@ -2,7 +2,7 @@
 import { Flex } from "@theme-ui/components"
 import { Link } from "gatsby"
 import React from "react"
-import { jsx, useColorMode, Link as TLink } from "theme-ui"
+import { jsx, Link as TLink, useColorMode } from "theme-ui"
 import { useSiteMetadata } from "../hooks"
 import { replaceSlashes } from "../utils"
 import ColorModeToggle from "./colormode-toggle"

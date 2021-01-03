@@ -5,11 +5,18 @@ import React from "react"
 import { jsx } from "theme-ui"
 import SEO from "../components/seo"
 import { useSiteMetadata } from "../hooks"
+import { Post } from "../types"
 
 // TODO: infinite page scrolling for blog posts
 
-const IndexPage: React.FC<PageProps<GatsbyTypes.PostsQuery>> = (props) => {
-  console.log(props)
+type PostsQuery = {
+  posts: {
+    nodes: Post[]
+  }
+}
+
+const IndexPage: React.FC<PageProps<PostsQuery>> = ({ data, ...props }) => {
+  console.log(data)
 
   const { title } = useSiteMetadata()
 

@@ -8,10 +8,9 @@ import { replaceSlashes } from "../utils"
 import ColorModeToggle from "./colormode-toggle"
 
 export const Header: React.FC = ({}) => {
-  const { title, navigation: nav, externalLinks } = useSiteMetadata()
+  const { basePath, title, navigation: nav, externalLinks } = useSiteMetadata()
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
-  const basePath = `/`
 
   const toggleColorMode = (e: React.ChangeEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -26,7 +25,7 @@ export const Header: React.FC = ({}) => {
           aria-label={`${title} - Back to home`}
           sx={{ color: `heading`, textDecoration: `none` }}
         >
-          <div sx={{ my: 0, fontWeight: `medium`, fontSize: [3, 4] }}>
+          <div sx={{ my: 0, fontWeight: `semibold`, fontSize: [3, 4] }}>
             {title}
           </div>
         </Link>

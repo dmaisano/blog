@@ -1,6 +1,6 @@
 # personalized ignore
 
-src/__generated__
+tailwind/
 
 
 # Logs

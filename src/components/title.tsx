@@ -4,7 +4,7 @@ import React from "react"
 import { jsx } from "theme-ui"
 
 type TitleProps = {
-  as: "h1" | "h2"
+  as?: "h1" | "h2"
   className?: string
   text: string
 }
@@ -45,9 +45,9 @@ const Title: React.FC<TitleProps> = ({
       </Box>
       <div
         sx={{
-          color: `secondary`,
+          color: `accent`,
           a: {
-            variant: `links.secondary`,
+            variant: `links.accent`,
           },
         }}
       >

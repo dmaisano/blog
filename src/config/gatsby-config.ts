@@ -6,6 +6,9 @@ const siteMetadata = {
   title: `dmaisano`,
   description: `Personal Blog`,
   author: `@dmaisano`,
+  basePath: `/`,
+  blogPath: `/posts`,
+  tagsPath: `/tags`,
   externalLinks: [
     {
       name: `Github`,
@@ -19,10 +22,6 @@ export default {
   siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: `gatsby-plugin-typegen`,
-    //   options: {},
-    // },
     {
       resolve: "gatsby-plugin-mdx",
       options: {

@@ -3,10 +3,11 @@ import { Box } from "@theme-ui/components"
 import { Link } from "gatsby"
 import React from "react"
 import { jsx } from "theme-ui"
-import { Post } from "../types"
+import { PostType } from "../types"
+import ItemTags from "./item-tags"
 
 interface PostProps {
-  post: Post
+  post: PostType
   showTags?: boolean
 }
 
@@ -17,19 +18,19 @@ const Post: React.FC<PostProps> = ({ post, showTags }) => (
     </Link>
     <p
       sx={{
-        color: `secondary`,
+        color: `accent`,
         mt: 1,
-        a: { color: `secondary` },
+        a: { color: `accent` },
         fontSize: [1, 1, 2],
       }}
     >
       <time>{post.frontmatter.date}</time>
-      {/* {post.frontmatter.tags && showTags && (
+      {post.frontmatter.tags && showTags && (
         <>
           {` — `}
-          <ItemTags tags={post.tags} />
+          <ItemTags tags={post.frontmatter.tags} />
         </>
-      )} */}
+      )}
     </p>
   </Box>
 )

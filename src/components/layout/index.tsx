@@ -2,9 +2,10 @@
 import { Global } from "@emotion/core"
 import React from "react"
 import { Container, jsx } from "theme-ui"
+import Footer from "../footer"
 import { Header } from "../header"
 import SEO from "../seo"
-import styles from "./global-styles"
+import GlobalStyles from "./global-styles"
 
 type props = {
   classname?: string
@@ -13,13 +14,14 @@ type props = {
 const Layout: React.FC<props> = ({ children, classname }) => {
   return (
     <>
-      <Global styles={styles as any} />
+      <Global styles={GlobalStyles} />
       <SEO />
       <Container id="container">
         <Header />
         <main id="content" className={classname}>
           {children}
         </main>
+        <Footer />
       </Container>
     </>
   )

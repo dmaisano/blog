@@ -5,6 +5,7 @@
  */
 
 import { CreatePagesArgs, CreateWebpackConfigArgs } from "gatsby"
+import { PostsQuery } from "../types"
 
 export const createPages = async ({
   actions,
@@ -13,17 +14,14 @@ export const createPages = async ({
 }: CreatePagesArgs) => {
   const { createPage } = actions
 
-  const result = await graphql(/* GraphQL */ `
-    query Posts {
+  const result = await graphql<PostsQuery>(/* GraphQL */ `
+    query CreatePosts {
       posts: allMdx(
         filter: { fileAbsolutePath: { regex: "//content/posts/.*/" } }
-        sort: { fields: frontmatter___date, order: DESC }
       ) {
         nodes {
           slug
-          excerpt
           body
-          timeToRead
           frontmatter {
             title
             date(formatString: "MMMM Do, YYYY")
@@ -41,9 +39,7 @@ export const createPages = async ({
     return
   }
 
-  const data = result.data as any
-
-  data?.posts.nodes.forEach((node) => {
+  result.data?.posts.nodes.forEach((node) => {
     const component = require.resolve(`../templates/post.tsx`)
     const context = node
 

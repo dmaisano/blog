@@ -1,51 +1,34 @@
 /** @jsx jsx */
 import { Link as TLink, Text } from "@theme-ui/components"
-import { graphql, PageProps } from "gatsby"
+import { Link, PageProps } from "gatsby"
 import React from "react"
 import { jsx } from "theme-ui"
+import PostListing from "../components/post-listings"
 import SEO from "../components/seo"
+import Title from "../components/title"
 import { useSiteMetadata } from "../hooks"
-import { Post } from "../types"
+import { usePostsQuery } from "../hooks/use-posts-query"
+import { visuallyHidden } from "../styles"
+import { replaceSlashes } from "../utils"
 
 // TODO: infinite page scrolling for blog posts
 
-type PostsQuery = {
-  posts: {
-    nodes: Post[]
-  }
-}
-
-const IndexPage: React.FC<PageProps<PostsQuery>> = ({ data, ...props }) => {
-  console.log(data)
-
-  const { title } = useSiteMetadata()
+const IndexPage: React.FC<PageProps> = ({}) => {
+  const { basePath, blogPath, title } = useSiteMetadata()
+  const posts = usePostsQuery()
 
   return (
     <>
       <SEO title="Home" />
 
-      <h1
-        id="title"
-        sx={{
-          // include `px` so we can use it with `sx`
-          border: 0,
-          clip: `rect(0, 0, 0, 0)`,
-          height: `1px`,
-          margin: `-1px`,
-          overflow: `hidden`,
-          padding: 0,
-          position: `absolute`,
-          whiteSpace: `nowrap`,
-          width: `1px`,
-        }}
-      >
+      <h1 id="title" sx={visuallyHidden}>
         {title}
       </h1>
 
       <section
         id="hero"
         sx={{
-          mb: [5, 6, 7],
+          mb: [5, 6],
           p: { fontSize: [1, 2, 3], mt: 2 },
           variant: `section_hero`,
         }}
@@ -56,35 +39,24 @@ const IndexPage: React.FC<PageProps<PostsQuery>> = ({ data, ...props }) => {
           Hi.
         </Text>
         <p>
-          My name's Domenico - I'm a Full-Stack Developer &amp; Computer Science
+          My name is Dom. I'm a Full-Stack Developer &amp; Computer Science
           graduate from{" "}
           <TLink href="https://computing.njit.edu/" target="_blank">
             NJIT
           </TLink>
-          .
+          . I am currently seeking new opportunites!
         </p>
       </section>
+
+      <Title text="Latest Posts">
+        <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>
+          Read all posts
+        </Link>
+      </Title>
+
+      <PostListing posts={posts} showTags={false} />
     </>
   )
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query Posts {
-    posts: allMdx(
-      filter: { fileAbsolutePath: { regex: "//content/posts/.*/" } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
-      nodes {
-        slug
-        excerpt
-        timeToRead
-        frontmatter {
-          title
-          date(formatString: "MMMM Do, YYYY")
-        }
-      }
-    }
-  }
-`

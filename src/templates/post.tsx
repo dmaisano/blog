@@ -2,9 +2,9 @@ import { PageProps } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
 import SEO from "../components/seo"
-import { Post } from "../types"
+import { PostType } from "../types"
 
-const PostTemplate: React.FC<PageProps<{}, Post>> = (props) => {
+const PostTemplate: React.FC<PageProps<{}, PostType>> = (props) => {
   const { body, frontmatter, timeToRead } = props.pageContext
 
   return (

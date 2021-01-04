@@ -3,17 +3,18 @@ import { tailwind } from "@theme-ui/presets"
 import { ColorModesScale, merge } from "theme-ui"
 
 const colors: ColorModesScale = {
-  accent: `#5f6c80`,
-  background: `#FEFEFE`,
+  accent: `#546071`,
+  background: `#f5f5f5`,
   divide: `#cbd5e0`,
-  highlight: `#7f9cf5`,
-  primary: `#7f9cf5`,
-  secondary: `#a5e075`,
+  highlight: `#3865ef`,
+  primary: `#3865ef`,
   text: `#2E3440`,
   heading: `#424242`,
   toggleIcon: tailwind.colors.gray[8] as string,
   modes: {
     dark: {
+      highlight: `#7f9cf5`,
+      primary: `#7f9cf5`,
       accent: `#7f8ea3`,
       background: `#1A202B`,
       divide: `#2d3748`,
@@ -84,8 +85,8 @@ const theme = merge(tailwind as any, {
     },
   },
   links: {
-    secondary: {
-      color: `secondary`,
+    accent: {
+      color: `accent`,
       textDecoration: `none`,
       ":hover": {
         color: `heading`,

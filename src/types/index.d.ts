@@ -1,29 +1,28 @@
 import { Node } from "gatsby"
-import PostType from "../components/post"
 
-export type PostType = {
+export type Post = {
   slug: string
   excerpt?: string
   body: string
   timeToRead?: number
   tableOfContents?: any
-  frontmatter: PostFrontmatterType
+  frontmatter: PostFrontmatter
 }
 
-export type PostFrontmatterType = {
+export type PostFrontmatter = {
   title: string
   date: string
   description?: string
-  tags?: PostTagType[]
+  tags?: PostTag[]
 }
 
-export type PostTagType = {
+export type PostTag = {
   name: string
   slug: string
 }
 
 export type PostsQuery = {
   posts: {
-    nodes: PostType[]
+    nodes: Post[]
   }
 }

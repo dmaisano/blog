@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby"
-import { PostType } from "../types"
+import { Post } from "../types"
 
-export const usePostsQuery = (): PostType[] => {
+export const usePostsQuery = (): Post[] => {
   const { posts } = useStaticQuery<{
     posts: {
-      nodes: PostType[]
+      nodes: Post[]
     }
   }>(graphql`
     query FetchPosts {

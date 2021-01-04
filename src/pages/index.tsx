@@ -54,7 +54,7 @@ const IndexPage: React.FC<PageProps> = ({}) => {
         </Link>
       </Title>
 
-      <PostListing posts={posts} showTags={false} />
+      <PostListing posts={posts} basePath={basePath} showTags={false} />
     </>
   )
 }

@@ -1,22 +1,33 @@
 import React from "react"
-import { PostType } from "../types"
-import Post from "./post"
+import { Post } from "../types"
+import PostItem from "./post-item"
 
 interface PostListingProps {
-  posts: PostType[]
+  posts: Post[]
   className?: string
-  showTags: boolean
+  basePath: string
+  showTags?: boolean
 }
 
 const PostListing: React.FC<PostListingProps> = ({
   posts,
+  basePath,
   className = ``,
   showTags = true,
 }) => {
+  posts.forEach((post) => {
+    console.log(post.slug)
+  })
+
   return (
     <article id="post-listing" sx={{ mb: [5, 6, 7] }} className={className}>
       {posts.map((post) => (
-        <Post key={post.slug} post={post} showTags={showTags} />
+        <PostItem
+          key={post.slug}
+          post={post}
+          basePath={basePath}
+          showTags={showTags}
+        />
       ))}
     </article>
   )

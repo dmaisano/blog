@@ -1,11 +1,11 @@
 import React from "react"
 import { useSiteMetadata } from "../hooks"
-import { PostTagType } from "../types"
+import { PostTag } from "../types"
 import { Link } from "gatsby"
 import { replaceSlashes } from "../utils"
 
 type ItemTagsProps = {
-  tags: PostTagType[]
+  tags: PostTag[]
 }
 
 const ItemTags: React.FC<ItemTagsProps> = ({ tags }) => {

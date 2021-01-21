@@ -1,6 +1,7 @@
 import React from "react"
 import { Helmet, HelmetProps } from "react-helmet"
 import { useSiteMetadata } from "../hooks"
+import { useTheme } from "../theme-context"
 
 type SEOProps = {
   helmentProps?: HelmetProps
@@ -15,6 +16,7 @@ const SEO: React.FC<SEOProps> = ({
   lang = `en`,
   title = `Home`,
 }) => {
+  const isDarkTheme = useTheme()
   const site = useSiteMetadata()
 
   const metaDescription = description || site.description
@@ -69,11 +71,14 @@ const SEO: React.FC<SEOProps> = ({
     meta.concat(helmentProps.meta)
   }
 
+  const htmlAttributes: HelmetProps["htmlAttributes"] = {
+    lang,
+    class: isDarkTheme ? `dark` : `light`,
+  }
+
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      htmlAttributes={htmlAttributes}
       title={title}
       titleTemplate={titleTemplate}
       meta={meta}

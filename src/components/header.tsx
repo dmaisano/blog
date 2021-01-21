@@ -7,7 +7,7 @@ import { useSiteMetadata } from "../hooks"
 import { replaceSlashes } from "../utils"
 import ColorModeToggle from "./colormode-toggle"
 
-export const Header: React.FC = ({}) => {
+export const Header: React.FC = () => {
   const { basePath, title, navigation: nav, externalLinks } = useSiteMetadata()
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`

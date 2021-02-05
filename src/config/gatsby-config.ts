@@ -45,6 +45,18 @@ export default {
         display: "swap",
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `dmaisano`,
+        short_name: `dmaisano`,
+        start_url: `/`,
+        background_color: `#3865ef`,
+        theme_color: `#3865ef`,
+        display: `minimal-ui`,
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
   ],
 }
 

@@ -12,3 +12,5 @@ export const visuallyHidden: ThemeUICSSObject = {
   whiteSpace: `nowrap`,
   width: `1px`,
 }
+
+export { CodeStyles } from "./code"

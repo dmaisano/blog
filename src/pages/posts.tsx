@@ -27,12 +27,13 @@ const Posts: React.FC = () => {
         <Heading as="h1" variant="styles.h1" sx={{ marginY: 2 }}>
           Posts
         </Heading>
-        <Link
+        {/* TODO: Tags logic */}
+        {/* <Link
           sx={{ variant: `links.accent`, marginY: 2 }}
           to={replaceSlashes(`/${basePath}/${tagsPath}`)}
         >
           View all tags
-        </Link>
+        </Link> */}
       </Flex>
 
       <PostListing sx={{ mt: [4, 5] }} posts={posts} basePath={basePath} />

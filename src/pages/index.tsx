@@ -36,7 +36,16 @@ const IndexPage: React.FC<PageProps> = ({}) => {
         <Text
           sx={{ fontSize: [4, 5, 6], fontWeight: `bold`, color: `heading` }}
         >
-          Hi.
+          Domenico Maisano 🌊
+        </Text>
+
+        <p sx={{ color: `accent` }}>
+          Computer Science Grad | Full-Stack Developer
+        </p>
+        {/* <Text
+          sx={{ fontSize: [4, 5, 6], fontWeight: `bold`, color: `heading` }}
+        >
+          Hi. 👋🏽
         </Text>
         <p>
           My name is Dom. I'm a Full-Stack Developer &amp; Computer Science
@@ -45,11 +54,14 @@ const IndexPage: React.FC<PageProps> = ({}) => {
             NJIT
           </TLink>
           . I am currently seeking new opportunites!
-        </p>
+        </p> */}
       </section>
 
       <Title text="Latest Posts">
-        <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>
+        <Link
+          sx={{ variant: `links.accent` }}
+          to={replaceSlashes(`/${basePath}/${blogPath}`)}
+        >
           Read all posts
         </Link>
       </Title>

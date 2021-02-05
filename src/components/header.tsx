@@ -58,6 +58,9 @@ export const Header: React.FC = () => {
               return (
                 <Link
                   key={lowcaseLink}
+                  sx={{
+                    variant: `links.accent`,
+                  }}
                   activeClassName="active"
                   to={replaceSlashes(`/${basePath}/${lowcaseLink}`)}
                 >

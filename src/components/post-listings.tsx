@@ -15,10 +15,6 @@ const PostListing: React.FC<PostListingProps> = ({
   className = ``,
   showTags = true,
 }) => {
-  posts.forEach((post) => {
-    console.log(post.slug)
-  })
-
   return (
     <article id="post-listing" sx={{ mb: [5, 6, 7] }} className={className}>
       {posts.map((post) => (

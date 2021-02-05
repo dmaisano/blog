@@ -1,7 +1,7 @@
+import { Link } from "gatsby"
 import React from "react"
 import { useSiteMetadata } from "../hooks"
 import { PostTag } from "../types"
-import { Link } from "gatsby"
 import { replaceSlashes } from "../utils"
 
 type ItemTagsProps = {

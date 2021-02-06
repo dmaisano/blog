@@ -29,7 +29,7 @@ const Blog = ({ posts }: PostsProps) => {
 
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Posts" />
       <Flex
         sx={{
           alignItems: `center`,

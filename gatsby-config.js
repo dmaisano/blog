@@ -7,7 +7,7 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 module.exports = {
   siteMetadata: {
     siteTitle: `dmaisano`,
-    siteTitleAlt: `Domenico Maisano - Site Title`,
+    siteTitleAlt: `dmaisano`,
     blogPath: `/posts`,
   },
   plugins: [
@@ -17,6 +17,7 @@ module.exports = {
       options: {
         showLineNumbers: false,
         blogPath: `/posts`,
+        feedTitle: `dmaisano blog`,
         formatString: `MMM D, YYYY`,
         navigation: [
           {

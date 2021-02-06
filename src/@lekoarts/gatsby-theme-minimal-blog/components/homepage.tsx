@@ -29,8 +29,6 @@ type PostsProps = {
 }
 
 const Homepage: React.FC<PostsProps> = ({ posts }) => {
-  console.log(posts)
-
   const { basePath, blogPath } = useMinimalBlogConfig()
   const { siteTitle } = useSiteMetadata()
 

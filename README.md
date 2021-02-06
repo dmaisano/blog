@@ -20,20 +20,6 @@ Built using [@lekoarts/gatsby-theme-minimal-blog](https://github.com/LekoArts/ga
 - Code highlighting with [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer) and [react-live](https://github.com/FormidableLabs/react-live) support. Also allows adding line numbers, line highlighting, language tabs, and file titles.
 - RSS Feed for blog posts
 
-## Installation
-
-```sh
-npm install @lekoarts/gatsby-theme-minimal-blog
-```
-
-### Install as a starter
-
-This will generate a new site that pre-configures use of the theme.
-
-```sh
-gatsby new minimal-blog LekoArts/gatsby-starter-minimal-blog
-```
-
 [**View the starter's code**](https://github.com/LekoArts/gatsby-starter-minimal-blog)
 
 ## Usage

@@ -19,7 +19,11 @@ type ListingProps = {
   showTags?: boolean
 }
 
-const Listing = ({ posts, className = ``, showTags = true }: ListingProps) => (
+const Listing: React.FC<ListingProps> = ({
+  posts,
+  className = ``,
+  showTags = true,
+}) => (
   <section sx={{ mb: [5, 6] }} className={className}>
     {posts.map((post) => (
       <BlogListItem key={post.slug} post={post} showTags={showTags} />

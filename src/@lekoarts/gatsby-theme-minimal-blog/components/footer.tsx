@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer
       sx={{

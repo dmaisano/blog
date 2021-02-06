@@ -8,7 +8,7 @@ import replaceSlashes from "@lekoarts/gatsby-theme-minimal-blog/src/utils/replac
 import { Link } from "gatsby"
 import { jsx } from "theme-ui"
 import { visuallyHidden } from "../styles/utils"
-import Bottom from "../texts/bottom.mdx"
+import Projects from "../../../components/projects"
 import Hero from "../texts/hero.mdx"
 import Listing from "./listings"
 
@@ -50,8 +50,13 @@ const Homepage: React.FC<PostsProps> = ({ posts }) => {
         </Link>
       </Title>
       <Listing posts={posts} showTags={false} />
+      <Title text="Projects">
+        <Link to={replaceSlashes(`/${basePath}/projects`)}>
+          View All Projects
+        </Link>
+      </Title>
       <List sx={{ variant: `section_bottom` }}>
-        <Bottom />
+        <Projects limit={3} />
       </List>
     </Layout>
   )

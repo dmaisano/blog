@@ -24,7 +24,7 @@ type PostsProps = {
   [key: string]: any
 }
 
-const Blog = ({ posts }: PostsProps) => {
+const Blog: React.FC<PostsProps> = ({ posts }) => {
   const { tagsPath, basePath } = useMinimalBlogConfig()
 
   return (

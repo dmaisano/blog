@@ -31,7 +31,7 @@ function SpotifyPlayer({ uri, view, theme, size }) {
       width={sizePresets[size].width}
       height={sizePresets[size].height}
       frameBorder="0"
-      allowtransparency="true"
+      allowTransparency={true}
     />
   )
 }

@@ -8,12 +8,16 @@ module.exports = {
   siteMetadata: {
     siteTitle: `dmaisano`,
     siteTitleAlt: `Domenico Maisano - Site Title`,
+    blogPath: `/posts`,
   },
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
+        showLineNumbers: false,
+        blogPath: `/posts`,
+        formatString: `MMM D, YYYY`,
         navigation: [
           {
             title: `Posts`,

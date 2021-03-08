@@ -39,6 +39,9 @@ module.exports = {
             url: `https://github.com/dmaisano`,
           },
         ],
+        siteUrl: `https://dmaisano.netlify.app`,
+        siteLanguage: `en`,
+        siteImage: `/banner.jpg`,
       },
     },
     {

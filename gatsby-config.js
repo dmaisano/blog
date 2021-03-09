@@ -10,6 +10,7 @@ module.exports = {
     siteTitleAlt: `dmaisano`,
     blogPath: `/posts`,
     siteUrl: `https://dmaisano.netlify.app`,
+    siteDescription: `personal blog`,
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
   },

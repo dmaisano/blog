@@ -18,13 +18,23 @@ const Projects: React.FC<ProjectsProps> = ({ limit, sx, ...props }) => {
   let projects: Project[] = [
     {
       title: `Travel Site`,
-      href: `https://dmaisano-travel-demo.netlify.app/`,
+      href: `https://dmaisano-travel-demo.netlify.app`,
       repo: `https://github.com/dmaisano/travel-site`,
     },
     {
       title: `Reddit Clone`,
       href: `https://github.com/dmaisano/reddit-clone-tutorial`,
       repo: `https://github.com/dmaisano/reddit-clone-tutorial`,
+    },
+    {
+      title: `Blog`,
+      href: `https://dmaisano.netlify.app`,
+      repo: `https://github.com/dmaisano/blog`,
+    },
+    {
+      title: `Soho Muse Landing Page`,
+      href: `https://dmaisano-soho-landing-page.netlify.app`,
+      repo: `https://github.com/dmaisano/soho-landing-page`,
     },
   ]
 

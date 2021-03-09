@@ -56,7 +56,7 @@ const Homepage: React.FC<PostsProps> = ({ posts }) => {
         </Link>
       </Title>
       <List sx={{ variant: `section_bottom` }}>
-        <Projects limit={3} />
+        <Projects limit={5} />
       </List>
     </Layout>
   )
